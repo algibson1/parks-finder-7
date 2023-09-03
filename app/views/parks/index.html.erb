@@ -1,0 +1,15 @@
+<h2>Total Parks: <%= @parks.count %></h2>
+
+<% @parks.each do |park| %>
+  <h4><%= park.name %> </h4>
+  <p>Description: </p>
+  <p><%= park.description %></p>
+  <p>Directions:</p>
+  <p><%= park.directions %></p>
+  <p>Standard Hours:</p>
+    <% park.standard_hours.each do |day, hours| %>
+      <%= "#{day.capitalize}: #{hours}" %><br>
+    <% end %>
+    <br>
+    <br>
+<% end %>
